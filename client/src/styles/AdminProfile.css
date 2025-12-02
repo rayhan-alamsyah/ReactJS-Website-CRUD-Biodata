@@ -1,0 +1,229 @@
+/* AdminProfile.css - KODE CSS LENGKAP DAN OPTIMAL (REVISI FINAL UNTUK BORDER WRAP) */
+
+/* --- Container Halaman Utama --- */
+.page-container {
+    background-color: #f7f9fc; 
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* --- Kontainer Card Formulir --- */
+.card-form-wrapper {
+    width: 100%;
+    max-width: 650px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.card-body {
+    padding: 0;
+}
+
+/* --- Judul dan Keterangan --- */
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card-description {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* --- Form Groups (Label + Input) --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #495057;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* --- Input dan Textarea (Tampilan Bersih) --- */
+.form-control,
+.form-select,
+.file-upload-info {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #ffffff;
+    box-shadow: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+textarea.form-control {
+    resize: none;
+}
+
+.form-control:focus,
+.form-select:focus,
+.file-upload-info:focus {
+    border-color: #9471f0;
+    box-shadow: 0 0 0 2px rgba(105, 90, 203, 0.2);
+    outline: none;
+}
+
+/* --- DRAG AND DROP AREA UTAMA --- */
+
+.file-drop-area {
+    border: 2px dashed #ced4da;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    transition: background-color 0.2s, border-color 0.2s;
+    text-align: center;
+    min-height: 150px; /* Tinggi minimum saat KOSONG */
+    padding: 0; 
+    position: relative;
+    /* Ubah ini: Pastikan selalu block untuk menahan konten */
+    display: block; 
+    /* Penting: Pastikan overflow diatur agar konten tidak keluar batas */
+    overflow: hidden; 
+}
+
+/* Sembunyikan input file bawaan */
+.file-upload-input {
+    display: none;
+}
+
+.drop-zone-label {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    /* Hanya flex saat tidak ada gambar (default state) */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; 
+}
+
+.drop-text {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.placeholder-text {
+    color: #a0a0a0;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* --- STYLING KONDISIONAL (Saat Gambar Terpilih) --- */
+
+.file-drop-area.is-file-selected {
+    min-height: auto; 
+    padding: 0;
+    /* Ubah ini: display block untuk konten gambar */
+    display: block; 
+}
+
+/* Sembunyikan label dan teks default saat gambar terpilih */
+.is-file-selected .drop-zone-label {
+    display: block; /* label harus tetap ada untuk membungkus image-preview-wrapper */
+    padding: 0; /* Hapus padding jika gambar sudah ada */
+}
+
+.is-file-selected .drop-text,
+.is-file-selected .placeholder-text {
+    display: none;
+}
+
+/* --- PREVIEW GAMBAR DAN WRAPPER --- */
+
+.image-preview-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto; 
+    /* Padding ini akan membuat ruang antara gambar dan garis putus-putus */
+    padding: 15px; 
+    display: block; /* Pastikan selalu block */
+    box-sizing: border-box; /* Pastikan padding dihitung dalam width/height */
+}
+
+.uploaded-image {
+    max-width: 100%;
+    height: auto; 
+    display: block; 
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Tombol Hapus (X) --- */
+.remove-image-btn {
+    position: absolute;
+    /* Posisikan relatif terhadap padding 15px di wrapper */
+    top: 20px; /* 15px padding + 5px dari tepi */
+    right: 20px; /* 15px padding + 5px dari tepi */
+    width: 24px;
+    height: 24px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    opacity: 0.9;
+    z-index: 10;
+    transition: opacity 0.2s;
+}
+
+.remove-image-btn:hover {
+    opacity: 1;
+}
+
+/* --- Grup Tombol Submit/Cancel --- */
+.button-group {
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.btn-submit {
+    background-color: #695acb;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #5044a6;
+}
+
+.btn-cancel {
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #ced4da;
+}
+
+.btn-cancel:hover {
+    background-color: #e2e6ea;
+}
