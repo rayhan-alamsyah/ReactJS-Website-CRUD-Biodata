@@ -11,7 +11,7 @@ function Navbar() {
                     <li><a href="#home">Home</a></li>
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#judul-projek">Projek</a></li>
-                    <li><a href="" className="tbl-biru">Sign Up</a></li>
+                    <li><a href="/adminprojek" className="tbl-biru">Sign Up</a></li>
                 </ul>
             </div>
         </div>
